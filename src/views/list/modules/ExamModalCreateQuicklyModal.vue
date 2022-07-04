@@ -162,7 +162,7 @@ export default {
       })
     },
     backward () {
-      
+
     },
     handleCancel () {
       // clear form & currentStep

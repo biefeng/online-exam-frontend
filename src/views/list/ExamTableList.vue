@@ -1,6 +1,7 @@
 <template>
   <a-card :bordered="false">
     <div id="toolbar">
+      <a-button type="primary" icon="plus" @click="$refs.createExamQuicklyModal.create()">快速新建</a-button>&nbsp;
       <a-button type="primary" icon="plus" @click="$refs.createExamModal.create()">新建</a-button>&nbsp;
       <a-button type="primary" icon="reload" @click="loadAll()">刷新</a-button>
     </div>
@@ -12,6 +13,7 @@
     />
     <!-- ref是为了方便用this.$refs.modal直接引用，下同 -->
     <step-by-step-exam-modal ref="createExamModal" @ok="handleOk" />
+    <exam-modal-create-quickly-modal ref="createExamQuicklyModal">  </exam-modal-create-quickly-modal>
     <!-- 这里的详情需要传进去  -->
     <exam-edit-modal ref="editExamModal" @ok="handleOk" />
     <!--  更新考试封面图片  -->
@@ -25,13 +27,15 @@ import { getExamAll } from '../../api/exam'
 import StepByStepExamModal from './modules/StepByStepExamModal'
 import ExamEditModal from './modules/ExamEditModal'
 import UpdateAvatarModal from '@views/list/modules/UpdateAvatarModal'
+import ExamModalCreateQuicklyModal from './modules/ExamModalCreateQuicklyModal.vue'
 
 export default {
   name: 'ExamTableList',
   components: {
     UpdateAvatarModal,
     ExamEditModal,
-    StepByStepExamModal
+    StepByStepExamModal,
+    ExamModalCreateQuicklyModal
   },
   data () {
     const that = this // 方便在bootstrap-table中引用methods

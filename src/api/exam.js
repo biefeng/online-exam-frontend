@@ -72,6 +72,17 @@ export function getExamQuestionTypeList () {
   })
 }
 
+// 获取题库
+export function getExamQuestionBankList () {
+  return axios({
+    url: api.ExamQuestionBankList,
+    method: 'get',
+    headers: {
+      'Content-Type': 'application/json;charset=UTF-8'
+    }
+  })
+}
+
 export function getExamCardList () {
   return axios({
     url: api.ExamCardList,
@@ -86,6 +97,15 @@ export function examCreate (parameter) {
   console.log(parameter)
   return axios({
     url: api.ExamCreate,
+    method: 'post',
+    data: parameter
+  })
+}
+
+export function examRandomCreate (parameter) {
+  console.log(parameter)
+  return axios({
+    url: api.ExamRandomCreate,
     method: 'post',
     data: parameter
   })

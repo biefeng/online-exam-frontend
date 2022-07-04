@@ -61,6 +61,24 @@ export default {
       })
       // 和点击考试卡片效果一样，跳转到考试页面，里面有所有题目的情况，相当于就是详情了
       window.open(routeUrl.href, '_blank')
+    },
+    pre () {
+      if (this.currIndex > 0) {
+        this.currIndex--
+      } else {
+        this.$message.info('已是第一题')
+        return
+      }
+      this.getQuestionDetail(this.currIndex)
+    },
+    next () {
+      if (this.currIndex < this.questionsIds.length - 1) {
+        this.currIndex++
+      } else {
+        this.$message.info('已是最后一题')
+        return
+      }
+      this.getQuestionDetail(this.currIndex)
     }
   },
   mounted () {

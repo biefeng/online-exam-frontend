@@ -23,7 +23,10 @@ const api = {
   ExamAll: '/exam/all',
   // 获取问题列表，按照单选、多选和判断进行分类
   ExamQuestionTypeList: '/exam/question/type/list',
+  // 获取题库
+  ExamQuestionBankList: '/exam/questionBank/list',
   ExamCreate: '/exam/create',
+  ExamRandomCreate: '/exam/create/random',
   ExamUpdate: '/exam/update',
   ExamCardList: '/exam/card/list',
   // 获取考试详情
