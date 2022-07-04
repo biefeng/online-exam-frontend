@@ -343,9 +343,24 @@ export default {
     border: 1px solid;
     width: 90%;
     border-radius: 10px;
+    max-height: 60vh;
+
   }
   .question-ids-panel.hidden {
     display: none;
+  }
+
+  .question-panel {
+    flex-grow: 1;
+
+    /deep/ .ant-checkbox-wrapper {
+      height: auto !important;
+    }
+
+    /deep/ .ant-radio-wrapper {
+      height: auto !important;
+      white-space: normal;
+    }
   }
 
   .main-ctn {
@@ -355,10 +370,6 @@ export default {
 
   /deep/ .ant-layout-header {
     padding: 0 10px;
-  }
-
-  /deep/ .ant-checkbox-wrapper {
-    height: auto !important;
   }
 }
 
@@ -379,6 +390,7 @@ export default {
   justify-content: space-around;
   background: #fff;
   padding: 10px;
+  overflow-y: scroll;
 }
 
 .question-ids-ele {
