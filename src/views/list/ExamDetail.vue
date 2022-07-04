@@ -309,6 +309,8 @@ export default {
     border: 1px solid;
     width: 90%;
     border-radius: 10px;
+    max-height: 60vh;
+
   }
   .question-ids-panel.hidden {
     display: none;
@@ -354,6 +356,7 @@ export default {
   justify-content: space-around;
   background: #fff;
   padding: 10px;
+  overflow-y: scroll;
 }
 
 .question-ids-ele {
